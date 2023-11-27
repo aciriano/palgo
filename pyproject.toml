@@ -44,3 +44,11 @@ repository = "https://github.com/aciriano/palgo"
 
 [tool.setuptools.dynamic]
 version = {attr = "palgo.__version__"}
+
+[tool.pytest.ini_options]
+markers = ["unit", "long"]
+testpaths = "tests"
+addopts = "-m 'not slow' --cov=palgo --cov-report=html --disable-warnings -vv"
+
+[tool.black]
+line-length = 92
